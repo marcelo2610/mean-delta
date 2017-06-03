@@ -1,10 +1,13 @@
+/**
+ * Created by Marcelo on 27/05/2017.
+ */
 const db = require('./db');
 const mongoose = require('mongoose');
-
-function MongoDBConnection() {
+function  MongoDBConnection() {
     this.connect = connect;
 
     return this;
+
 }
 
 function connect() {
@@ -16,12 +19,12 @@ function connect() {
         console.log('Conectado ao MongoDB!!!');
     });
 }
-
 function getUrlConnection() {
     return 'mongodb://'
         + db.usuario + ':'
         + db.senha
-        +'@ds155841.mlab.com:55841/mean-delta';
+        + '@ds155411.mlab.com:55411/mean-delta-marcelo';
+
 }
 
 module.exports = MongoDBConnection();
