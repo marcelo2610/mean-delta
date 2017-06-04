@@ -41,8 +41,11 @@
         <div class="col-md-1">
             <span>{{loc.dataHora | date: 'HH:mm:ss'}}</span>
         </div>
-        <div class="col-md-2">
-            <button type="button" class="btn btn-primary">Consultar</button>
+        <div class="col-md-1">
+            <button type="button" class="btn btn-primary" (click)="consultarMapa(loc.dominio)">Consultar</button>
+        </div>
+        <div class="col-md-1">
+            <button type="button" class="btn btn-danger" (click)="excluirMapa(loc)">Excluir</button>
         </div>
     </div>
 </div>

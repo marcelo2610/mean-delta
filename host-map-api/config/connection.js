@@ -4,11 +4,11 @@
 const db = require('./db');
 const mongoose = require('mongoose');
 function  MongoDBConnection() {
-    this.connect = connect;
+  this.connect = connect;
 
-    return this;
+  return this;
 
-}
+  }
 
 function connect() {
     console.log('Conectando ao MongoDB');
@@ -19,11 +19,11 @@ function connect() {
         console.log('Conectado ao MongoDB!!!');
     });
 }
-function getUrlConnection() {
-    return 'mongodb://'
-        + db.usuario + ':'
-        + db.senha
-        + '@ds155411.mlab.com:55411/mean-delta-marcelo';
+  function getUrlConnection() {
+      return 'mongodb://'
+      + db.usuario + ':'
+      + db.senha
+      + '@ds155411.mlab.com:55411/mean-delta-marcelo';
 
 }
 

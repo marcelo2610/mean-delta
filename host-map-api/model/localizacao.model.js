@@ -1,3 +1,6 @@
+/**
+ * Created by Marcelo on 27/05/2017.
+ */
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 

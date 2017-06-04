@@ -5,6 +5,9 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
+var index = require('./routes/index');
+var users = require('./routes/users');
+
 var app = express();
 
 // view engine setup
@@ -27,7 +30,7 @@ app.use(function (req, res, next) {
     next();
 });
 
-let localizacaoRoute = require('./routes/localizacao.route');
+var localizacaoRoute = require('./routes/localizacao.route');
 
 app.use('/api/localizacao', localizacaoRoute);
 
@@ -35,9 +38,12 @@ let connection = require('./config/connection');
 
 connection.connect();
 
+app.use('/', index);
+app.use('/users', users);
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
-  var err = new Error('Not Found');
+  var err = new Error('Not Found');le
   err.status = 404;
   next(err);
 });
