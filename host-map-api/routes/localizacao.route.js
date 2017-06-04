@@ -26,8 +26,17 @@ router.post('/', (req, res, next) => {
 });
 
 router.put('/', (req, res, next) => {
-    res.status(200).json({nome: 'Marcelo'});
+    let localizacao = new Localizacao(req.body);
+
+    LocalizacaoService
+        .atualizar(localizacao)
+        .then((doc) => {
+            res.status(200).json(doc);
+        }, (err) => {
+            res.status(500).json(err);
+        });
 });
+
 
 router.delete('/', (req, res, next) => {
     LocalizacaoService.excluir(req.param('id')).then(
